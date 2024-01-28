@@ -542,16 +542,16 @@ UINTN RunGenericMenu(IN REFIT_MENU_SCREEN *Screen,
             LOG(3, LOG_LINE_NORMAL, L"Processing keystroke (ScanCode = %d)....", key.ScanCode);
             switch (key.ScanCode) {
                 case SCAN_UP:
-                    UpdateScroll(&State, SCROLL_LINE_UP);
-                    break;
-                case SCAN_LEFT:
                     UpdateScroll(&State, SCROLL_LINE_LEFT);
                     break;
+                case SCAN_LEFT:
+                    UpdateScroll(&State, SCROLL_LINE_UP);
+                    break;
                 case SCAN_DOWN:
-                    UpdateScroll(&State, SCROLL_LINE_DOWN);
+                    UpdateScroll(&State, SCROLL_LINE_RIGHT);
                     break;
                 case SCAN_RIGHT:
-                    UpdateScroll(&State, SCROLL_LINE_RIGHT);
+                    UpdateScroll(&State, SCROLL_LINE_DOWN);
                     break;
                 case SCAN_HOME:
                     UpdateScroll(&State, SCROLL_FIRST);
