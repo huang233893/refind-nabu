@@ -1,0 +1,25 @@
+name: refind_nabu
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build refind for nabu
+        run: sudo bash build-nabu.sh
+
+      - name: Upload refind-nabu.efi
+        uses: actions/upload-artifact@v4.0.0
+        with:
+          # Artifact name
+          name: refind-nabu
+          path: refind-nabu.efi
