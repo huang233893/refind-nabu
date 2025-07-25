@@ -10,7 +10,7 @@ if [ -d "$WORK_DIR" ]; then rm -Rf $WORK_DIR; fi
 mkdir $WORK_DIR
 
 # download ubuntu rootfs.img
-wget -O $WORK_DIR/rootfs.tar.gz http://cdimage.ubuntu.com/ubuntu-base/releases/23.10/release/ubuntu-base-23.10-base-arm64.tar.gz
+wget -O $WORK_DIR/rootfs.tar.gz https://cdimage.ubuntu.com/ubuntu-base/releases/25.04/release/ubuntu-base-25.04-base-arm64.tar.gz
 
 # extract rootfs
 mkdir $WORK_DIR/temprootfs
